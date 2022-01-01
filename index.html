@@ -7,11 +7,14 @@
 body { background-color: black; }
 #text { font-family: 'IBM Plex Sans', sans-serif; color: white; }
 #countdown { font-family: 'IBM Plex Sans', sans-serif; color: white; }
+#centered { position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px; }
 </style>
 </head>
 <body>
+<div id="centered">
 <h1 id="text">New Year 2022 Countdown! 2022 begins in:</h1>
 <h1 id="countdown"></h1>
+</div>
 <script>
 function update() {
   var today = new Date();
