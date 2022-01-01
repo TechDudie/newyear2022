@@ -13,6 +13,22 @@ body { background-color: black; }
 <h1 id="text">New Year 2022 Countdown! 2022 begins in:</h1>
 <h1 id="countdown"></h1>
 <script>
+function update() {
+  var today = new Date();
+  // Annoying, right? BLEEP YOU, [Object undefined]!
+  var hours = 23 - today.getHours()
+  var minutes = 59 - today.getMinutes()
+  var seconds = 59 - today.getSeconds()
+  // Annoying, right? BLEEP YOU, INTS!
+  if (minutes < 10) { minutes = "0" + minutes; }
+  if (minutes < 1) { minutes = "00"; }
+  if (seconds < 10) { seconds = "0" + seconds; }
+  if (seconds < 1) { seconds = "00"; }
+  var time = hours + ":" + minutes + ":" + seconds;
+  if (today.getFullYear() > 2021) { time = "HAPPY NEW YEAR 2022!!!"; }
+  document.getElementById("countdown").innerHTML = time;
+}
+setInterval(update, 100);
 </script>
 </body>
 </html>
